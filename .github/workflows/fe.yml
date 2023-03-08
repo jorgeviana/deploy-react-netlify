@@ -14,8 +14,10 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: react build
+      - name: uses node
         uses: actions/setup-node@v3
+
+      - name: react build
         run: |
           npm i
           npm run build
