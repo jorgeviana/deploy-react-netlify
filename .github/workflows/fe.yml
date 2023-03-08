@@ -11,11 +11,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: uses node
+        uses: actions/setup-node@v3
 
       - name: React Build
-      - run: npm install -g bats
         run: |
           npm i
           npm run build
