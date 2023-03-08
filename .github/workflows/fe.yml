@@ -11,26 +11,27 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: React Build
       - uses: actions/checkout@v3
-
-      - name: uses node
-        uses: actions/setup-node@v3
-
-      - name: react build
+      - uses: actions/setup-node@v3
         run: |
           npm i
           npm run build
 
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
       - name: Netlify Deploy
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_TO_PROD: true
+
   smoke_test:
     runs-on: ubuntu-latest
-    needs: build
+    needs: deploy
     steps:
       - name: Runs a smoke test
         run: curl --fail https://bejewelled-mermaid-54e346.netlify.app
