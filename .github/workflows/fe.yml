@@ -54,6 +54,6 @@ jobs:
     needs: deploy
     steps:
       - name: Runs a smoke test
-        run: curl --fail https://bejewelled-mermaid-54e346.netlify.app
+        run: curl --fail https://my-fe-app.netlify.app
 
     
