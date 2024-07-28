@@ -55,6 +55,6 @@ jobs:
     needs: deploy
     steps:
       - name: Runs a smoke test
-        run: curl -s https://my-fe-app.netlify.app | grep -q "rev 2"
+        run: curl -s https://my-fe-app.netlify.app | grep -q "rev 1"
 
     
