@@ -11,18 +11,18 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
           node-version: '20'  # specify your node version
 
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
 
-      - name: Build the site
-        run: npm run build  # or your specific build command
+      # - name: Build the site
+      #   run: npm run build  # or your specific build command
 
       - name: Install Netlify CLI
         run: npm install -g netlify-cli
