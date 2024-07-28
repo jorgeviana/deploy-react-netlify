@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: '20'  # specify your node version
 
-      # - name: Install dependencies
-      #   run: npm install
+      - name: Install dependencies
+        run: npm install
 
       # - name: Build the site
       #   run: npm run build  # or your specific build command
