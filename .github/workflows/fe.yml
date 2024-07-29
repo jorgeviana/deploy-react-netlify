@@ -54,6 +54,8 @@ jobs:
     needs: deploy
     steps:
       - name: Runs a smoke test
-        run: npm run cypress:run
+        run: |
+          npm i
+          npm run cypress:run
 
     
