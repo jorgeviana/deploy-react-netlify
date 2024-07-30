@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: someEnv
         run: env
+      - name: someFind
+        run: find /
       - name: someDocker
         run: docker --version
 
