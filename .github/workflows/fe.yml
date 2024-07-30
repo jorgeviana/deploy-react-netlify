@@ -62,6 +62,6 @@ jobs:
       - name: Runs a smoke test
         run: |
           npm i
-          npm run cypress:run
+          npm run smoke-test
 
     

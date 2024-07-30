@@ -13,10 +13,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "./commitId > ./public/commitId.txt && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "cypress:run": "cypress run"
+    "smoke-test": "cypress run --env COMMIT_ID=`./commitId`"
   },
   "eslintConfig": {
     "extends": [
