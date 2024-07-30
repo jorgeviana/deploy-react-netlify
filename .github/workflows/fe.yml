@@ -13,8 +13,10 @@ jobs:
     steps:
       - name: someEnv
         run: env
-      - name: someFind
-        run: find /
+      - name: someNode
+        run: |
+          node --version
+          npm --version
       - name: someDocker
         run: docker --version
 
