@@ -8,20 +8,25 @@ on:
   workflow_dispatch:
 
 jobs:
-  # build:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: checkout
-  #       uses: actions/checkout@v3
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: someEnv
+        run: env
+      - name: someDocker
+        run: docker --version
 
-  #     - name: use node
-  #       uses: actions/setup-node@v3
+      #       - name: checkout
+      #         uses: actions/checkout@v3
 
-  #     - name: React Build
-  #       run: |
-  #         npm i
-  #         npm run build
-      
+      #     - name: use node
+      #       uses: actions/setup-node@v3
+
+      #     - name: React Build
+      #       run: |
+      #         npm i
+      #         npm run build
+
   #     - name: save built artifact
   #       uses: actions/upload-artifact@master
   #       with:
