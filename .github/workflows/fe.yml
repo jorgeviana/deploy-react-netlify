@@ -8,11 +8,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  # build:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: checkout
-  #       uses: actions/checkout@v3
+   build:
+     runs-on: ubuntu-latest
+     steps:
+       - name: someEnv
+         run: env
+       - name: someDocker
+         run: docker --version
+
+#       - name: checkout
+#         uses: actions/checkout@v3
 
   #     - name: use node
   #       uses: actions/setup-node@v3
